@@ -1,0 +1,28 @@
+.text-font {
+  margin: 1.5rem 0 2rem;
+  font-family: "DM Serif Display", serif;
+  font-weight: 550;
+  line-height: 1.15;
+  font-size: 3rem;
+}
+.vf-accordion__btn {
+  color: #212121;
+  background: #fff;
+}
+.vf-accordion__btn::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 1;
+  color: #fff;
+  background: #33bdff;
+  text-align: center;
+  background-image: initial !important;
+  transform: rotate(0deg) !important;
+}
+
