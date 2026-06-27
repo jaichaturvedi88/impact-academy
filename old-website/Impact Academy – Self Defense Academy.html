@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/jai/projects/impact-academy/new-html-website/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Impact Academy – Self Defense Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Impact Academy – Agra&#39;s premier self-defense (karate) academy for all ages. Expert trainers, structured programs, and a welcoming community.">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="./Impact Academy – Self Defense Academy_files/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="./Impact Academy – Self Defense Academy_files/css2" rel="stylesheet">
+
+  <style>
+    /* ===== Global (app.component.css) ===== */
+    body {
+      background-color: #ffffff;
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #4e4e4e;
+    }
+
+    /* ===== Banner (banner.component.css) ===== */
+    .banner-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+        url("assets/logo/banner.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      background-attachment: fixed;
+    }
+    .impact-font {
+      font-family: 'Black Ops One', cursive;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    /* ===== Cards (cards.component.css) ===== */
+    .service-card {
+      padding: 65px;
+      border-radius: 10px;
+    }
+
+    /* ===== Facilities (facilites.component.css) ===== */
+    .images {
+      margin: auto;
+      padding-left: 100px;
+    }
+    .text-font {
+      margin: 1.5rem 0 2rem;
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+      line-height: 1.15;
+      font-size: 3rem;
+    }
+    .icon--lg {
+      width: 70px;
+      height: 70px;
+      line-height: 60px;
+      font-size: 30px;
+    }
+    .icon--circle {
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    /* ===== FAQ (faq.component.css) ===== */
+    .vf-accordion__btn {
+      color: #212121;
+      background: #fff;
+    }
+    .vf-accordion__btn::after {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      line-height: 1;
+      color: #fff;
+      background: #33bdff;
+      text-align: center;
+      background-image: initial !important;
+      transform: rotate(0deg) !important;
+    }
+
+    /* ===== Gallery ===== */
+    .img-size-change {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    /* ===== Contact (contact-us.component.css) ===== */
+    .contact-section {
+      background: #33BDFF;
+    }
+    @media screen and (min-width: 992px) {
+      .contact-section {
+        background: linear-gradient(to bottom, transparent 37%, #33BDFF 37%);
+      }
+    }
+    .contact-icon-box {
+      position: relative;
+    }
+    .query {
+      padding: 30px;
+      border-radius: 5px;
+    }
+    .form-control-custom--outline-dark {
+      border-color: #d8d7d7;
+      color: #4e4e4e;
+    }
+    .form-control-custom {
+      height: 50px;
+      line-height: 48px;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+    .contact-icon {
+      width: 40px;
+    }
+
+    /* ===== Footer (footer.component.css) ===== */
+    .footer {
+      background: #1D1F1F;
+    }
+    .section {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    .list {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .list--row {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .list--row__item {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      margin-right: 1rem;
+    }
+    .list--row__item:last-child {
+      margin-right: 0;
+    }
+    .list--column {
+      flex-direction: column;
+    }
+    .list--column__item {
+      margin-bottom: 1rem;
+    }
+    .t-link {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .social-icon, .social-icon--primary, .social-icon--alt {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      border: 1px solid #A2A2A3;
+      font-size: 24px;
+      line-height: 1;
+      color: #A2A2A3;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .social-icon--alt {
+      border: 1px solid #333535;
+      background: #333535;
+    }
+    .bi { color: #fff; }
+    .footer-copyright {
+      background: #111;
+      padding: 16px;
+    }
+    .counter {
+      color: white;
+      text-align: center;
+      padding-bottom: 12px;
+      background: #111;
+    }
+    .sm-text { font-size: 0.85rem; }
+    .t-short-para { font-size: 0.9rem; }
+    .section-sm { padding: 40px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR / HOME ===== -->
+  <nav class="navbar navbar-expand-lg text-bg-dark sticky-top">
+    <div class="container-fluid">
+      <img src="assets/logo/logo.png" alt="logo" height="60">
+      <h3 class="text-capitalize text-white ms-2">IMPACTACADEMY</h3>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+          <li class="nav-item me-2">
+            <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link text-white" href="#facilites">Facilities</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link text-white" href="#trainer">Trainer</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link text-white" href="#faqs">FAQs</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link text-white" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link text-white" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== BANNER ===== -->
+  <div class="banner-bg">
+    <div class="px-4 py-5 text-center">
+      <h1 class="display-5 fw-bold text-white mt-5 pt-5 impact-font">IMPACT</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mt-4 fw-bold text-white">Self Defense Academy</p>
+        <div class="d-grid gap-2 mt-4 d-sm-flex justify-content-sm-center">
+          <a href="#contact" class="btn btn-primary btn-lg p-3 px-4 gap-3">Become a Player</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SERVICE CARDS ===== -->
+  <div class="container mt-5 pt-3 mb-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="service-card bg-dark text-center">
+          <img src="assets/logo/icon-trainer.png" alt="Expert Trainer" class="img-fluid">
+          <h4 class="text-capitalize text-white mt-3">Expert Trainer</h4>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card bg-primary text-center">
+          <img src="assets/logo/icon-note.png" alt="Sports Guideline" class="img-fluid">
+          <h4 class="text-capitalize text-white mt-3">Sports Guideline</h4>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card bg-dark text-center">
+          <img src="assets/logo/icon-chat.png" alt="12/7 Support" class="img-fluid">
+          <h4 class="text-capitalize text-white mt-3">12/7 Support</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FACILITIES ===== -->
+  <div class="section-sm" id="facilites">
+    <div class="container pt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 d-none d-lg-block images">
+          <img src="assets/facilites/2.png" alt="Impact" width="380" class="img-fluid">
+        </div>
+        <div class="col-md-10 col-lg-6 mt-5">
+          <h2 class="text-capitalize text-font mt-0 text-center text-lg-start">
+            We Provide the Facilities For Students
+          </h2>
+          <div class="row g-4 g-xxl-5">
+            <div class="col-md-6">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="icon icon--circle icon--lg bg-primary text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
+                      <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ms-3">
+                  <p class="mb-2 fw-bold text-capitalize">Saturday Special Training</p>
+                  <p class="mb-0">There will be special training on every Saturday.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="icon icon--circle icon--lg bg-primary text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-square-dots" viewBox="0 0 16 16">
+                      <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+                      <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ms-3">
+                  <p class="mb-2 fw-bold text-capitalize">Monthly Training Discussion</p>
+                  <p class="mb-0">Training discussion will be held every month with the management.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <div class="icon icon--circle icon--lg bg-primary text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                      <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ms-3">
+                  <p class="mb-2 fw-bold text-capitalize">Monthly Parents Meeting</p>
+                  <p class="mb-0">Parents meeting will be held every month.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FAQs ===== -->
+  <div class="section--sm mt-5" id="faqs">
+    <div class="section__head">
+      <div class="container pt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-xl-6">
+            <div class="text-center">
+              <h2 class="text-capitalize mt-5 text-font">Frequently Asked Questions</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="accordion vf-accordion" id="faqAccordion">
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+                  Why should I learn karate?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body vf-accordion__body">
+                  The benefits of Karate practice are huge! Karate can increase your physical strength, coordination,
+                  balance, flexibility and stamina. Whatever you do in your life becomes a little easier because of
+                  karate. Karate not only trains your body but also trains your mind! It improves self-awareness,
+                  discipline, confidence and will power. Not only will you become more confident that you can defend
+                  yourself, but your confidence will increase to deal with all of life's trials.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false">
+                  How much does it cost?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body vf-accordion__body">
+                  We don't take any charge for it. We are providing it absolutely free.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false">
+                  What do I need to wear?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body vf-accordion__body">
+                  All students are required to wear a karate uniform (Gi) to class. Students will need to have a plain
+                  white t-shirt under their uniform top!
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false">
+                  Do I need previous karate or martial arts experience?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body vf-accordion__body">
+                  <b>ABSOLUTELY NOT!</b> Most of our new students do not have any experience, and that is 100% fine!
+                  We'll be able to help you along every step of the way to your success!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="accordion vf-accordion" id="faqAccordion2">
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true">
+                  How old should a child be before starting karate?
+                </button>
+              </h2>
+              <div id="collapseOne2" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion2">
+                <div class="accordion-body vf-accordion__body">
+                  Age 8 seems about the perfect age to start karate. Students younger than 8 years old need to 'Try
+                  Out' to see if Karate is a good fit for them. We do have a few 6 and 7 year old kids that have shown
+                  enough maturity. The style we do for Self Defense is sometimes just not possible to teach a 6 and 7
+                  year old in an effective manner.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false">
+                  How often should I practice?
+                </button>
+              </h2>
+              <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                <div class="accordion-body vf-accordion__body">
+                  Whenever you have time! We suggest setting aside at least 1 hour per week for practicing outside of
+                  class — that is only 10 minutes per day! Obviously the more you practice, the better you will become.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false">
+                  How fit do I have to be to practice karate?
+                </button>
+              </h2>
+              <div id="collapseThree2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                <div class="accordion-body vf-accordion__body">
+                  Most of us come to karate in order to become more coordinated and physically fit. So the brief
+                  answer is "not very". Even if you feel like the world's biggest klutz you can still practice karate
+                  and your coordination and fitness will greatly improve.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item vf-accordion__item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed vf-accordion__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour2" aria-expanded="false">
+                  What do I call the teacher?
+                </button>
+              </h2>
+              <div id="collapseFour2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                <div class="accordion-body vf-accordion__body">
+                  Instructors are addressed as "Sensei". Sensei is a Japanese title of respect (sort of like "Sir" or
+                  "Mister"). It means "teacher" and is considered very improper to refer to oneself as Sensei or
+                  Master.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GALLERY ===== -->
+  <div class="container pt-5 pb-3 mt-4" id="gallery">
+    <h2 class="text-center pt-3 mb-5 text-font">Our Gallery</h2>
+    <div class="container">
+      <div class="row text-center text-lg-start">
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-1.png" alt="Gallery 1">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-2.png" alt="Gallery 2">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-3.png" alt="Gallery 3">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-4.png" alt="Gallery 4">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-5.png" alt="Gallery 5">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-6.png" alt="Gallery 6">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-1.png" alt="Gallery 7">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-2.png" alt="Gallery 8">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-4.png" alt="Gallery 9">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-5.png" alt="Gallery 10">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-6.png" alt="Gallery 11">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4" onclick="return false;">
+            <img class="img-fluid img-thumbnail img-size-change" src="assets/gallery/gal-3.png" alt="Gallery 12">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT US ===== -->
+  <div class="section contact-section mt-5 pt-5" id="contact">
+    <div class="container">
+      <div class="row g-4 justify-content-md-between">
+        <div class="col-md-6 col-xl-4 mt-5">
+          <h2 class="mt-0 text-center mb-5 text-md-start text-capitalize text-font">
+            Get In Touch With Our Academy
+          </h2>
+          <ul class="list list--column">
+            <li class="list--column__item">
+              <div class="d-flex align-items-center mb-3 mt-5">
+                <div class="flex-shrink-0 contact-icon-box">
+                  <img src="assets/facilites/icon-location-pin.png" alt="Location" class="contact-icon">
+                </div>
+                <div class="ms-4">
+                  <p class="mb-2 fw-bold text-capitalize text-white h3">Office Address</p>
+                  <p class="mb-0 text-white">
+                    Behind Intellect library, near ST Thomas Church, Kahrai, Shamshabad Road Agra -282001
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="list--column__item">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 contact-icon-box">
+                  <img src="assets/facilites/icon-paper-plane.png" alt="Phone" class="contact-icon">
+                </div>
+                <div class="ms-5">
+                  <p class="mb-2 fw-bold text-capitalize h3 text-white">Phone Number</p>
+                  <a href="tel:+917983518266" style="text-decoration: none; color: white;"><b>+91 7983518266</b></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div class="query bg-light">
+            <h3 class="text-center text-lg-start text-capitalize mt-0 text-font">Join With Us</h3>
+            <form action="thank.php" method="post" class="row g-4">
+              <div class="col-12">
+                <input type="text" class="form-control form-control-custom form-control-custom--outline form-control-custom--outline-dark" placeholder="Full Name" name="fname" required="">
+              </div>
+              <div class="col-12">
+                <input type="email" class="form-control form-control-custom form-control-custom--outline form-control-custom--outline-dark" placeholder="Email Address" name="email" required="">
+              </div>
+              <div class="col-12">
+                <input type="text" class="form-control form-control-custom form-control-custom--outline form-control-custom--outline-dark" placeholder="Phone Number" name="phone" maxlength="10" required="">
+              </div>
+              <div class="col-12">
+                <textarea cols="30" rows="5" class="form-control form-control-custom--outline" placeholder="Message" name="message" required=""></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Become a Player</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Maps Embed -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.6395155548043!2d78.04092887410368!3d27.136162000454622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39747124b61e9273%3A0x5839cf49e2bb1e26!2sImpact%20Self%20Defense%20Academy!5e0!3m2!1sen!2sin!4v1687796195118!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="section">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Brand -->
+          <div class="col-md-6 col-lg-4">
+            <div class="text-center">
+              <img src="assets/facilites/2.png" alt="Impact" class="img-fluid" style="margin-left: -80px;">
+            </div>
+            <h4 class="mt-0 text-white text-capitalize" style="font-family: &#39;Black Ops One&#39;, cursive;">IMPACT</h4>
+            <p class="text-white t-short-para">Self Defense Academy</p>
+            <ul class="list list--row mt-4">
+              <li class="list--row__item">
+                <a href="#" class="t-link social-icon--alt">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="list--row__item">
+                <a href="#" class="t-link social-icon--alt">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="list--row__item">
+                <a href="#" class="t-link social-icon--alt">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Quick Links -->
+          <div class="col-md-6 col-lg-4">
+            <h3 class="mt-0 text-white text-capitalize mb-4">Quick Links</h3>
+            <ul class="list list--column d-flex flex-column">
+              <li class="list--column__item">
+                <a href="#facilites" class="t-link text-white text-capitalize">Facilities</a>
+              </li>
+              <li class="list--column__item">
+                <a href="#trainer" class="t-link text-white text-capitalize">Trainer</a>
+              </li>
+              <li class="list--column__item">
+                <a href="#faqs" class="t-link text-white text-capitalize">FAQs</a>
+              </li>
+              <li class="list--column__item">
+                <a href="#gallery" class="t-link text-white text-capitalize">Gallery</a>
+              </li>
+              <li class="list--column__item">
+                <a href="#contact" class="t-link text-white text-capitalize">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div class="col-md-6 col-lg-4">
+            <ul class="list list--row justify-content-md-between align-items-md-center">
+              <li class="list--row__item mt-3">
+                <div class="d-flex mt-4 mt-md-0">
+                  <div class="flex-shrink-0">
+                    <div class="icon icon--circle icon--lg bg-primary text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ms-3">
+                    <p class="mb-0 sm-text text-capitalize text-white">Email Address</p>
+                    <p class="t-short-para mt-1">
+                      <a href="mailto:impactselfdefenseacademy@gmail.com" style="text-decoration: none; color: white;">
+                        impactselfdefenseacademy@gmail.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="list--row__item mt-3">
+                <div class="d-flex mt-4 mt-md-0">
+                  <div class="flex-shrink-0">
+                    <div class="icon icon--circle icon--lg bg-primary text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ms-3">
+                    <p class="mb-0 sm-text text-capitalize text-white">Call Us</p>
+                    <p class="mb-0 text-white">
+                      <a href="tel:+917983518266" style="text-decoration: none; color: white;">+91 7983518266</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <p class="text-white t-short-para mt-3">
+                <b>ADDRESS</b><br>
+                Behind Intellect library, Kahrai, Shamshabad Road Agra -282001
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p class="mb-0 text-white text-center text-capitalize">
+        Copyright © 2022. All Rights Reserved By Impact
+      </p>
+    </div>
+    <div class="counter">
+      <div>Website visit count:</div>
+      <div id="visits">...</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+  <script src="./Impact Academy – Self Defense Academy_files/bootstrap.bundle.min.js.download"></script>
+
+
+</body></html>
