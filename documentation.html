@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation – Impact Self Defense Academy</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --red: #dc2626;
+      --bg: #0d0d0d;
+      --bg-2: #141414;
+      --bg-3: #1c1c1c;
+      --border: rgba(255,255,255,0.1);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --green: #22c55e;
+      --blue: #3b82f6;
+      --gold: #f59e0b;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.7; font-size: 15px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: 'Cascadia Code', 'Consolas', monospace;
+      background: rgba(255,255,255,0.07);
+      padding: 0.15em 0.45em; border-radius: 4px;
+      font-size: 0.88em; color: var(--gold);
+    }
+    pre {
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.25rem; overflow-x: auto;
+      font-family: 'Cascadia Code', 'Consolas', monospace;
+      font-size: 0.85em; line-height: 1.6; color: #e2e8f0;
+    }
+    pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+
+    /* Layout */
+    .wrapper { display: flex; min-height: 100vh; }
+    .sidebar {
+      width: 260px; flex-shrink: 0;
+      background: var(--bg-2); border-right: 1px solid var(--border);
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+      padding: 1.5rem 0;
+    }
+    .sidebar-logo {
+      padding: 0 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+    .sidebar-logo h1 { font-size: 1rem; font-weight: 700; color: var(--red); }
+    .sidebar-logo p { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+    .sidebar nav ul { list-style: none; }
+    .sidebar nav li a {
+      display: block; padding: 0.45rem 1.25rem;
+      font-size: 0.85rem; color: var(--muted);
+      transition: color 0.2s, background 0.2s;
+    }
+    .sidebar nav li a:hover { color: var(--text); background: rgba(255,255,255,0.05); text-decoration: none; }
+    .sidebar nav .nav-group { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 1rem 1.25rem 0.3rem; }
+
+    .content { flex: 1; padding: 3rem clamp(1.5rem, 5vw, 4rem); max-width: 860px; }
+
+    h2 {
+      font-size: 1.65rem; font-weight: 700; margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+      color: #fff;
+    }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-size: 1.1rem; font-weight: 600; color: #fff; margin: 1.75rem 0 0.6rem; }
+    p { color: var(--text); margin-bottom: 0.85rem; }
+    ul, ol { padding-left: 1.4rem; margin-bottom: 0.85rem; }
+    li { margin-bottom: 0.35rem; color: var(--text); }
+
+    .badge {
+      display: inline-block; padding: 0.2em 0.65em;
+      border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+    }
+    .badge-red   { background: rgba(220,38,38,0.2);  color: #f87171; }
+    .badge-green { background: rgba(34,197,94,0.15); color: #4ade80; }
+    .badge-blue  { background: rgba(59,130,246,0.15);color: #60a5fa; }
+    .badge-gold  { background: rgba(245,158,11,0.15);color: #fbbf24; }
+
+    .card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; color: #fff; }
+    .card p  { font-size: 0.875rem; color: var(--muted); margin: 0; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    th { text-align: left; padding: 0.65rem 1rem; background: var(--bg-3); color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--border); }
+    td { padding: 0.65rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+
+    .step {
+      display: flex; gap: 1rem; margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      font-size: 0.8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .step-body h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; color: #fff; }
+    .step-body p  { font-size: 0.875rem; color: var(--muted); margin: 0; }
+
+    .alert {
+      padding: 0.85rem 1.1rem; border-radius: 8px;
+      border-left: 3px solid; margin-bottom: 1rem;
+      font-size: 0.875rem;
+    }
+    .alert-red   { background: rgba(220,38,38,0.08);  border-color: var(--red);   color: #fca5a5; }
+    .alert-green { background: rgba(34,197,94,0.08);  border-color: var(--green); color: #86efac; }
+    .alert-blue  { background: rgba(59,130,246,0.08); border-color: var(--blue);  color: #93c5fd; }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1>IMPACT ACADEMY</h1>
+      <p>Technical Documentation</p>
+    </div>
+    <nav>
+      <ul>
+        <div class="nav-group">Overview</div>
+        <li><a href="#overview">Project Overview</a></li>
+        <li><a href="#file-structure">File Structure</a></li>
+
+        <div class="nav-group">Tech Stack</div>
+        <li><a href="#frontend">Frontend</a></li>
+        <li><a href="#fonts">Typography</a></li>
+        <li><a href="#css-features">CSS Features</a></li>
+        <li><a href="#js-features">JavaScript Features</a></li>
+
+        <div class="nav-group">Design</div>
+        <li><a href="#design-tokens">Design Tokens</a></li>
+        <li><a href="#z-index">Z-Index Stack</a></li>
+        <li><a href="#breakpoints">Breakpoints</a></li>
+
+        <div class="nav-group">Deployment</div>
+        <li><a href="#github-pages">GitHub Pages</a></li>
+        <li><a href="#workflow">CI/CD Workflow</a></li>
+        <li><a href="#netlify">Netlify (Legacy)</a></li>
+        <li><a href="#exclusions">Deploy Exclusions</a></li>
+
+        <div class="nav-group">Known Issues</div>
+        <li><a href="#mobile-nav">Mobile Nav Fixes</a></li>
+        <li><a href="#gotchas">CSS Gotchas</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <h2 id="overview">Project Overview</h2>
+    <p>
+      <strong>Impact Self Defense Academy</strong> is a static marketing website for a karate and self-defense school
+      in Agra, Uttar Pradesh. It is a single-page site with no build step, no framework, and no dependencies —
+      pure HTML, CSS, and vanilla JavaScript.
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <h4>Live Site</h4>
+        <p><a href="https://jaichaturvedi88.github.io/impact-academy/" target="_blank">jaichaturvedi88.github.io/impact-academy</a></p>
+      </div>
+      <div class="card">
+        <h4>Repository</h4>
+        <p><a href="https://github.com/jaichaturvedi88/impact-academy" target="_blank">github.com/jaichaturvedi88/impact-academy</a></p>
+      </div>
+      <div class="card">
+        <h4>Branch</h4>
+        <p><code>master</code> → auto-deploys via GitHub Actions to <code>gh-pages</code></p>
+      </div>
+      <div class="card">
+        <h4>Stack</h4>
+        <p>HTML5 · CSS3 · Vanilla JS · No build tools</p>
+      </div>
+    </div>
+
+    <h2 id="file-structure">File Structure</h2>
+    <pre><code>impact-academy/
+├── index.html              # Main single-page website
+├── styles.css              # All CSS (no preprocessor)
+├── script.js               # All JavaScript (vanilla)
+├── thank.php               # Form submission redirect page
+├── favicon.ico
+├── documentation.html      # This file (not deployed)
+├── assets/
+│   ├── logo/
+│   │   ├── logo.png        # Academy logo
+│   │   └── banner.jpg      # Hero background image
+│   ├── facilites/          # Facility section images
+│   └── gallery/
+│       ├── gal-1.png … gal-6.png
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions CI/CD
+├── netlify.toml            # Netlify config (legacy)
+├── .netlifyignore          # Netlify deploy exclusions
+└── .gitignore</code></pre>
+
+    <h2 id="frontend">Frontend</h2>
+
+    <h3>HTML</h3>
+    <ul>
+      <li>Semantic HTML5 — <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;address&gt;</code>, <code>&lt;details&gt;</code></li>
+      <li>Full accessibility: skip link, ARIA labels, <code>aria-expanded</code> on hamburger, <code>role="dialog"</code> on lightbox</li>
+      <li>SEO: <code>&lt;meta&gt;</code> description, Open Graph, Twitter Card, canonical URL</li>
+      <li>Structured data: JSON-LD with <code>LocalBusiness</code> and <code>FAQPage</code> schemas</li>
+      <li>Performance: <code>loading="lazy"</code> on images, <code>&lt;link rel="preload"&gt;</code> for hero image, <code>preconnect</code> for Google Fonts</li>
+    </ul>
+
+    <h3>JavaScript</h3>
+    <p>Vanilla ES2020+, no libraries. Single <code>script.js</code> loaded at end of <code>&lt;body&gt;</code>.</p>
+
+    <h3>CSS</h3>
+    <p>Pure CSS3. No preprocessor, no framework (no Bootstrap). Single <code>styles.css</code> file.</p>
+
+    <h2 id="fonts">Typography</h2>
+    <table>
+      <tr><th>Font</th><th>Usage</th><th>Weights</th><th>Source</th></tr>
+      <tr><td><strong>Bebas Neue</strong></td><td>Display headings, hero title, stat numbers, logo</td><td>400</td><td>Google Fonts</td></tr>
+      <tr><td><strong>Inter</strong></td><td>Body text, nav, buttons, form labels</td><td>300, 400, 500, 600, 700, 900</td><td>Google Fonts</td></tr>
+    </table>
+
+    <h2 id="css-features">CSS Features</h2>
+
+    <h3>Custom Properties (Variables)</h3>
+    <pre><code>:root {
+  --red:      #dc2626;    /* primary brand colour */
+  --red-dark: #991b1b;    /* hover state */
+  --red-glow: rgba(220,38,38,0.25);
+  --gold:     #f59e0b;    /* accent */
+  --bg:       #080808;    /* page background */
+  --bg-2:     #111111;    /* card / nav background */
+  --bg-3:     #1a1a1a;    /* input / subtle surface */
+  --text:     #f1f5f9;
+  --muted:    #94a3b8;
+  --font-d:   'Bebas Neue', ...;
+  --font-b:   'Inter', ...;
+  --pad:      clamp(4rem, 8vw, 7rem);  /* section padding */
+  --cw:       1200px;                   /* container width */
+  --r:        12px;                     /* border radius */
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --t:        0.35s;                    /* transition duration */
+}</code></pre>
+
+    <h3>Layout</h3>
+    <ul>
+      <li><strong>CSS Grid</strong> — programs grid (3-col), gallery grid (masonry-style), facilities, FAQ, contact, footer</li>
+      <li><strong>Flexbox</strong> — navbar, hero stats bar, buttons, cards</li>
+      <li><strong>Container</strong>: <code>width: min(1200px, 100% - 2rem)</code> — responsive without media queries</li>
+      <li><strong>Fluid spacing</strong>: <code>clamp()</code> for section padding, font sizes, and gaps</li>
+    </ul>
+
+    <h3>Visual Effects</h3>
+    <ul>
+      <li><strong>Glassmorphism</strong>: <code>backdrop-filter: blur()</code> on scrolled navbar and gallery overlay</li>
+      <li><strong>Scroll reveal</strong>: <code>IntersectionObserver</code> adds <code>.visible</code> class to <code>.reveal</code> elements</li>
+      <li><strong>Hero shapes</strong>: Absolutely-positioned decorative rings using CSS borders</li>
+      <li><strong>Gradient text</strong>: <code>-webkit-background-clip: text</code> on "DEFEND." in hero</li>
+      <li><strong>Stat counters</strong>: JS <code>setInterval</code> animated number count-up on viewport entry</li>
+    </ul>
+
+    <h2 id="js-features">JavaScript Features</h2>
+    <table>
+      <tr><th>Feature</th><th>Implementation</th></tr>
+      <tr><td>Page loader</td><td>Fades out after <code>window load</code> + 350ms delay</td></tr>
+      <tr><td>Navbar glass effect</td><td>Adds <code>.scrolled</code> class at <code>scrollY &gt; 50</code> via passive scroll listener</td></tr>
+      <tr><td>Mobile nav</td><td>Hamburger toggles <code>.open</code> on menu + overlay; overlay click closes; no body overflow manipulation</td></tr>
+      <tr><td>Smooth scroll</td><td>Intercepts <code>a[href^="#"]</code> clicks, offsets by header height</td></tr>
+      <tr><td>Active nav links</td><td><code>IntersectionObserver</code> on sections, highlights matching nav link</td></tr>
+      <tr><td>Scroll reveal</td><td><code>IntersectionObserver</code> on <code>.reveal</code> elements, threshold 0.12</td></tr>
+      <tr><td>Stat counters</td><td><code>IntersectionObserver</code> triggers <code>setInterval</code> count-up animation</td></tr>
+      <tr><td>Gallery lightbox</td><td>Click <code>.gi</code> → show full image in fixed overlay; Escape key closes</td></tr>
+      <tr><td>Form validation</td><td>HTML5 <code>checkValidity()</code> + <code>reportValidity()</code> on submit</td></tr>
+      <tr><td>Footer year</td><td><code>new Date().getFullYear()</code> injected into <code>#footerYear</code></td></tr>
+    </table>
+
+    <h2 id="design-tokens">Design Tokens</h2>
+    <p>All design decisions are encoded as CSS custom properties in <code>:root</code>. There is no separate token file — the source of truth is the top of <code>styles.css</code>.</p>
+
+    <h2 id="z-index">Z-Index Stacking Order</h2>
+    <table>
+      <tr><th>Element</th><th>z-index</th><th>Reason</th></tr>
+      <tr><td>Loader, Skip link</td><td>9999</td><td>Must cover everything on load</td></tr>
+      <tr><td>Lightbox</td><td>9998</td><td>Full-screen image viewer</td></tr>
+      <tr><td>Nav hamburger button</td><td>9001</td><td>Must be clickable above open drawer</td></tr>
+      <tr><td>Site header</td><td>9000</td><td>Fixed top bar always visible</td></tr>
+      <tr><td>Nav drawer (mobile)</td><td>8999</td><td>Slide-in panel</td></tr>
+      <tr><td>Nav overlay (backdrop)</td><td>8998</td><td>Dimmed background behind drawer</td></tr>
+      <tr><td>Floating action buttons</td><td>997</td><td>Call / WhatsApp FABs</td></tr>
+    </table>
+
+    <div class="alert alert-red">
+      <strong>Critical:</strong> <code>transform: translateZ(0)</code> on a <code>position: fixed</code> parent
+      creates a new stacking context — its fixed children become positioned relative to <em>it</em>, not the viewport.
+      This is why <code>.site-header</code> does <strong>not</strong> use any CSS <code>transform</code>.
+    </div>
+
+    <h2 id="breakpoints">Breakpoints</h2>
+    <table>
+      <tr><th>Breakpoint</th><th>Changes</th></tr>
+      <tr><td><code>≤ 900px</code></td><td>Facilities image hidden; FAQ, contact, footer collapse to 1-col grid</td></tr>
+      <tr><td><code>≤ 768px</code></td><td>Mobile nav activates (hamburger + slide-in drawer); gallery stays 2-col</td></tr>
+      <tr><td><code>≤ 560px</code></td><td>Hero stats separators hidden; form row stacks; footer 1-col</td></tr>
+      <tr><td><code>≤ 480px</code></td><td>FABs collapse to icon-only round buttons</td></tr>
+    </table>
+
+    <h2 id="github-pages">GitHub Pages</h2>
+    <p>The site is deployed to GitHub Pages from the <code>gh-pages</code> branch, which is auto-populated by the CI/CD workflow on every push to <code>master</code>.</p>
+    <div class="card">
+      <h4>Pages Source</h4>
+      <p>Branch: <code>gh-pages</code> · Root: <code>/ (root)</code></p>
+    </div>
+    <div class="alert alert-blue">
+      After any push to <code>master</code>, allow ~1–2 minutes for GitHub Actions to build and GitHub Pages to propagate.
+    </div>
+
+    <h2 id="workflow">CI/CD Workflow</h2>
+    <p>File: <code>.github/workflows/deploy.yml</code></p>
+    <pre><code>name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write        # Required: lets the action push to gh-pages branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          exclude_assets: '.github,angular,old-website,new-html-website,.netlify,.netlifyignore,netlify.toml,README.md'</code></pre>
+
+    <h3>Why <code>peaceiris/actions-gh-pages</code>?</h3>
+    <p>The native <code>actions/deploy-pages</code> action requires a <code>github-pages</code> environment configured in repo settings. <code>peaceiris/actions-gh-pages@v3</code> works with just a <code>GITHUB_TOKEN</code> and <code>contents: write</code> permission — simpler and more reliable for this repo's setup.</p>
+
+    <h2 id="netlify">Netlify (Legacy)</h2>
+    <p>The site was originally deployed to <a href="https://impactselfdefenseacademy.netlify.app" target="_blank">impactselfdefenseacademy.netlify.app</a>. It was migrated to GitHub Pages after Netlify build credits were exhausted.</p>
+
+    <p>The Netlify config (<code>netlify.toml</code>) remains in the repo as a fallback:</p>
+    <pre><code>[build]
+  publish = "."
+  command = ""            # No build step — static files served directly</code></pre>
+
+    <div class="alert alert-green">
+      Netlify can be reactivated at any time by running: <code>netlify deploy --prod --dir .</code>
+      (direct deploy bypasses build minutes entirely).
+    </div>
+
+    <h2 id="exclusions">Deploy Exclusions</h2>
+    <h3>Netlify (<code>.netlifyignore</code>)</h3>
+    <pre><code>angular/
+old-website/
+new-html-website/
+documentation.html</code></pre>
+
+    <h3>GitHub Actions (<code>exclude_assets</code> in workflow)</h3>
+    <pre><code>.github, angular, old-website, new-html-website,
+.netlify, .netlifyignore, netlify.toml, README.md</code></pre>
+    <p><strong>Note:</strong> <code>documentation.html</code> is excluded from Netlify via <code>.netlifyignore</code> but <em>is</em> deployed to GitHub Pages (it's an internal reference document with <code>noindex</code> meta tag).</p>
+
+    <h2 id="mobile-nav">Mobile Nav — Fix History</h2>
+    <p>The mobile navigation went through several iterations to resolve a menu-hidden-behind-content issue.</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Problem: Nav items floating centered</h4>
+        <p>Base <code>.nav-menu</code> had <code>align-items: center</code>. Fixed by adding <code>align-items: stretch</code> in mobile breakpoint and <code>display: block; width: 100%</code> on list items.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Problem: Menu hiding behind page content</h4>
+        <p>Sections with CSS animations or transforms create new stacking contexts. Fixed by bumping all nav z-indices to the 8998–9001 range.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Problem: <code>overflow: hidden</code> on <code>&lt;html&gt;</code> clipping nav</h4>
+        <p><code>overflow: hidden</code> on the root element clips <code>position: fixed</code> children in some browsers. Switched to body-only.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Problem: Gallery images showing through nav on iOS Safari</h4>
+        <p><code>overflow: hidden</code> on <code>&lt;body&gt;</code> causes fixed elements to lose background rendering on iOS Safari. Final fix: removed all body/html overflow manipulation. The nav overlay uses <code>touch-action: none</code> to block touch scrolling via CSS instead.</p>
+      </div>
+    </div>
+
+    <h2 id="gotchas">CSS Gotchas</h2>
+
+    <div class="alert alert-red">
+      <strong>transform + position:fixed</strong> — Any CSS <code>transform</code>, <code>filter</code>, or <code>will-change</code> on a <code>position: fixed</code> ancestor makes that ancestor a containing block for its fixed descendants. They are no longer viewport-relative. This is why <code>.site-header</code> uses no transforms (hardware acceleration via <code>translateZ(0)</code> was removed).
+    </div>
+
+    <div class="alert alert-red">
+      <strong>overflow:hidden on &lt;html&gt;</strong> — Clips <code>position: fixed</code> children in Firefox and some mobile browsers. Never use it on the root element to block scroll.
+    </div>
+
+    <div class="alert alert-red">
+      <strong>overflow:hidden on &lt;body&gt; (iOS Safari)</strong> — Body overflow manipulation breaks <code>position: fixed</code> element background rendering on iOS Safari, causing content to bleed through overlays. Use <code>touch-action: none</code> on the overlay element instead.
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

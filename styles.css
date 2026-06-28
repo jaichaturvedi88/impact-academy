@@ -723,10 +723,42 @@ strong { color: var(--text); }
 }
 
 /* ═══════════════════════════════════════════════════════════
+   FLOATING ACTION BUTTONS
+═══════════════════════════════════════════════════════════ */
+.fab-group {
+  position: fixed; bottom: 1.5rem; right: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+  z-index: 997;
+}
+.fab {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.7rem 1.1rem 0.7rem 0.85rem;
+  border-radius: 50px;
+  font-family: var(--font-b); font-size: 0.9rem; font-weight: 600;
+  color: #fff; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  white-space: nowrap;
+}
+.fab svg { width: 20px; height: 20px; flex-shrink: 0; }
+.fab:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.55); }
+.fab-whatsapp { background: #25d366; }
+.fab-whatsapp:hover { background: #20c05c; }
+.fab-call { background: var(--red); }
+.fab-call:hover { background: var(--red-dark); }
+
+@media (max-width: 480px) {
+  .fab span { display: none; }
+  .fab { padding: 0.85rem; border-radius: 50%; }
+  .fab svg { width: 22px; height: 22px; }
+  .fab-group { bottom: 1.25rem; right: 1rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════
    PRINT
 ═══════════════════════════════════════════════════════════ */
 @media print {
   .site-header, .hero-shapes, .scroll-cue,
-  .loader, .map-wrap, .site-footer, .lightbox { display: none; }
+  .loader, .map-wrap, .site-footer, .lightbox, .fab-group { display: none; }
   body { background: #fff; color: #000; }
 }
