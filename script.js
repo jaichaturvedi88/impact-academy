@@ -26,14 +26,12 @@ const closeNav = () => {
   menu?.classList.remove('open');
   overlay?.classList.remove('open');
   toggle?.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
 };
 const openNav = () => {
   toggle?.classList.add('open');
   menu?.classList.add('open');
   overlay?.classList.add('open');
   toggle?.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
 };
 
 toggle?.addEventListener('click', () => menu?.classList.contains('open') ? closeNav() : openNav());
